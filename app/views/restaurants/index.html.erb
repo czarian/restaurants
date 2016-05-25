@@ -1,7 +1,22 @@
 <h1>Restaurants</h1>
 
-<ul>
+<div class="row small-up-1 medium-up-2 large-up-3">
   <% @restaurants.each do |restaurant| %>
-  <li><%= link_to restaurant, restaurant_path(restaurant) %></li>
+
+  <div class="column">
+  <div class="callout">
+  <p>
+    <%= link_to restaurant, restaurant_path(restaurant) %>
+  </p>
+  <p>
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{restaurant.latitude}%2C#{restaurant.longitude}" %>
+  </p>
+  <p class="lead">
+    <%= restaurant.description %>
+  </p>
+  <p class="subheader">Comments: <%= restaurant.comments.count %></p>
+  </div>
+  </div>
+
   <% end %>
-</ul>
+  </div>

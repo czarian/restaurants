@@ -6,6 +6,9 @@
     <p>
       <%= @restaurant.description %>
     </p>
+    <p>
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@restaurant.latitude}%2C#{@restaurant.longitude}" %>
+  </p>
   </div>
   <div class="columns medium-6">
     <h3>Comments</h3>
