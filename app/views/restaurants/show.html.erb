@@ -9,9 +9,17 @@
     <p>
     <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@restaurant.latitude}%2C#{@restaurant.longitude}" %>
   </p>
+
+  <h3>Nearby locations</h3>
+  <ul>
+  <% for location in @restaurant.nearbys(10) %>
+    <li><%= link_to location.name, location %> (<%= location.distance.round(2) %> km)</li>
+  <% end %>
+  </ul>
   </div>
   <div class="columns medium-6">
     <h3>Comments</h3>
     <%= react_component('CommentSection', restaurantId: @restaurant.id, comments: raw(render(template: 'comments/index.json.jbuilder'))) %>
   </div>
+
 </div>
