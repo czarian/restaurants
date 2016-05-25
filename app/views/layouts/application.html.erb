@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -16,6 +15,7 @@
     <ul class="menu">
       <li class="menu-text"><a href="/">Restaurants</a></li>
       <li><%= link_to 'manage restaurants', '/admin' %></li>
+      <li><%= link_to 'new restaurant', '/restaurants/new' %></li>
     </ul>
     </section>
   </nav>

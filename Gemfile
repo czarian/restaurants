@@ -17,8 +17,9 @@ gem 'lodash-rails'
 gem 'sprockets-es6'
 
 gem 'geocoder'
-
 gem 'jquery-rails'
+
+
 group :development, :test do
 
   gem 'byebug'

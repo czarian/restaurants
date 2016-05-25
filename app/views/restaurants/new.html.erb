@@ -1,0 +1,24 @@
+<%= form_for(@restaurant) do |f| %>
+<div class="row">
+    <div class="large-4 columns">
+      <%= f.label :name %>
+      <%= f.text_field :name, autocomplete: "off", class: "form-control"  %>
+    </div>
+
+    <div class="large-4 columns">
+      <%= f.label :address %>
+      <%= f.text_field :address, autocomplete: "off" %>
+    </div>
+
+    <div class="large-4 columns">
+      <%= f.label :description %>
+      <%= f.text_field :description, autocomplete: "off", class: "form-control"  %>
+    </div>
+
+
+
+    <div class="actions">
+      <%= f.submit "Save", class: "button primary"  %>
+    </div>
+</div>
+    <% end %>
