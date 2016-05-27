@@ -11,7 +11,7 @@ class Actions{
   }
 
   addComment(params){
-    Api.post('/restaurants/1/comments',{
+    Api.post(`/restaurants/${this.restaurantId}/comments`,{
       comment: params
     }).then( resp => {
         return resp.json();
