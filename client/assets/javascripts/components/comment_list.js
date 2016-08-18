@@ -9,11 +9,11 @@ class CommentList extends React.Component{
   }
 
   componentDidMount(){
-    this.context.store.addChangeListner(this._onChange.bind(this));
+    this.context.store.addChangeListener(this._onChange.bind(this));
   }
 
   componentWillUnmount(){
-    this.context.store.removeChangeListner(this._onChange.bind(this));
+    this.context.store.removeChangeListener(this._onChange.bind(this));
   }
 
   render(){

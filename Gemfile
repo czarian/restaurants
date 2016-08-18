@@ -11,6 +11,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'ancestry'
 gem 'rails_admin'
 gem 'foundation-rails'
+gem 'foreman'
+gem 'httparty'
 
 gem 'geocoder'
 gem 'jquery-rails'

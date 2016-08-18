@@ -1,6 +1,7 @@
 import AppDispatcher from '../app_dispatcher';
 import Constants from '../constants';
 import {EventEmitter} from 'events';
+import _ from 'lodash';
 class CommentStore extends EventEmitter {
   constructor() {
     super()
@@ -44,14 +45,17 @@ class CommentStore extends EventEmitter {
   }
 
   comments(parentId){
-    return this._comments.filter( c => {return c && c.parent_id === parentId });
+    return _.chain(this._comments.filter( c => {return c && c.parent_id === parentId; }))
+            .sortBy('rank')
+            .reverse()
+            .value();
   }
 
-  addChangeListner(callback){
+  addChangeListener(callback){
     this.on(Constants.CHANGE_EVENT, callback);
   }
 
-  removeChangeListner(callback){
+  removeChangeListener(callback){
     this.removeListener(Constants.CHANGE_EVENT, callback);
   }
 
