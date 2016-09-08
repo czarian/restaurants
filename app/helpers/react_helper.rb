@@ -15,6 +15,7 @@ module ReactHelper
 
   def script(component, id, props)
     "<script>
+    //renderReact is from App.js
       document.addEventListener('DOMContentLoaded', function(ev){
         renderReact('#{id}', '#{component}', #{props.to_json});
       });

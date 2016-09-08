@@ -21,6 +21,16 @@ gem 'jquery-rails'
 group :development, :test do
 
   gem 'byebug'
+
+  gem 'capybara'
+  gem 'rspec-rails', '~> 3.4'
+  gem 'capybara-screenshot'
+  gem 'poltergeist'
+  gem 'launchy'
+  gem 'simplecov'
+  gem 'database_cleaner'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
+
 end
 
 group :development do
